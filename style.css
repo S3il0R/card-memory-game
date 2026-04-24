@@ -1,0 +1,32 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 80px); /* 4 колонки */
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc; /* Серый цвет — "рубашка" */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+
+.card.open {
+    background-color: #fff; /* Белый цвет — когда открыта */
+}
+
+.card.hidden {
+    visibility: hidden; /* Исчезает, когда пара найдена */
+}
