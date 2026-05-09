@@ -1,32 +1,95 @@
+/* Общее */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
     font-family: sans-serif;
     text-align: center;
+    background: #f0f0f0;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Экраны */
+.screen { display: none; }
+.screen.active { display: block; }
+
+h1 { font-size: 2rem; margin-bottom: 24px; }
+h2 { font-size: 1.8rem; margin-bottom: 16px; }
+
+/* Меню */
+.settings-group {
+    margin: 16px auto;
+    max-width: 480px;
+    text-align: left;
+}
+
+.settings-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.options-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.options-row label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+/* Кнопки */
+button {
+    margin: 8px;
+    padding: 10px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid #333;
+    background: #fff;
+    border-radius: 4px;
+}
+
+button:hover { background: #e8e8e8; }
+
+/* HUD */
+.hud {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto 16px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Игровое поле */
 .board {
     display: grid;
-    grid-template-columns: repeat(4, 80px); /* 4 колонки */
     gap: 10px;
     justify-content: center;
-    margin: 20px auto;
+    margin: 0 auto;
 }
 
+/* Карточки */
 .card {
     width: 80px;
     height: 80px;
-    background-color: #ccc; /* Серый цвет — "рубашка" */
+    background-color: #ccc;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 24px;
     cursor: pointer;
     border: 1px solid #000;
+    user-select: none;
 }
 
-.card.open {
-    background-color: #fff; /* Белый цвет — когда открыта */
-}
+.card.open    { background-color: #fff; }
+.card.matched { background-color: #b6f5b6; cursor: default; }
 
-.card.hidden {
-    visibility: hidden; /* Исчезает, когда пара найдена */
-}
+/* Результат */
+#screen-result p { margin: 10px 0; font-size: 1.1rem; }
