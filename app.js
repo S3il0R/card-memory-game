@@ -10,20 +10,7 @@ const DIFFICULTY = {
 const SYMBOLS = {
     letters: ['A','B','C','D','E','F','G','H','I','J','K','L'],
     numbers: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-    shapes: [
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><circle cx="20" cy="20" r="16"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><rect x="6" y="6" width="28" height="28" rx="3"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><polygon points="20,4 36,36 4,36"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><polygon points="20,3 24.9,14.6 37.6,14.6 27.4,22.1 31.3,33.7 20,26.5 8.7,33.7 12.6,22.1 2.4,14.6 15.1,14.6"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><path d="M20 35 C20 35 4 24 4 13 A8 8 0 0 1 20 10 A8 8 0 0 1 36 13 C36 24 20 35 20 35Z"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><polygon points="20,3 37,20 20,37 3,20"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><polygon points="20,3 37,14 31,34 9,34 3,14"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><rect x="15" y="3" width="10" height="34"/><rect x="3" y="15" width="34" height="10"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><path d="M20 4 A16 16 0 1 0 20 36 A10 10 0 1 1 20 4Z"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><ellipse cx="16" cy="22" rx="10" ry="8"/><ellipse cx="26" cy="24" rx="8" ry="6"/><ellipse cx="20" cy="17" rx="7" ry="7"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><polygon points="22,3 10,22 20,22 18,37 30,18 20,18"/></svg>`,
-        `<svg viewBox="0 0 40 40" width="36" height="36" fill="currentColor"><circle cx="20" cy="20" r="5"/><ellipse cx="20" cy="9" rx="4" ry="6"/><ellipse cx="20" cy="31" rx="4" ry="6"/><ellipse cx="9" cy="20" rx="6" ry="4"/><ellipse cx="31" cy="20" rx="6" ry="4"/></svg>`
-    ]
+    symbols: ['!', '@', '#', '$', "%", '&', '?', '-', '+', '~', '/', '=']
 };
 
 function fisherYates(arr) {
@@ -91,7 +78,7 @@ const AppMenu = defineComponent({
                     <div class="options-row">
                         <label class="radio-btn" :class="{ selected: symbolType === 'letters' }" @click="symbolType = 'letters'">🔤 Буквы</label>
                         <label class="radio-btn" :class="{ selected: symbolType === 'numbers' }" @click="symbolType = 'numbers'">🔢 Цифры</label>
-                        <label class="radio-btn" :class="{ selected: symbolType === 'shapes'  }" @click="symbolType = 'shapes'">⏺️ Фигуры</label>
+                        <label class="radio-btn" :class="{ selected: symbolType === 'symbols'  }" @click="symbolType = 'symbols'">🔣 Символы</label>
                     </div>
                 </div>
 
@@ -307,8 +294,12 @@ const App = defineComponent({
     },
     template: `
         <div>
-            <!-- Кнопка темы (фиксированная) -->
-            <button class="btn-theme" @click="toggleTheme" aria-label="Переключить тему">
+            <button 
+                v-if="currentScreen === 'menu'"
+                class="btn-theme" 
+                @click="toggleTheme" 
+                aria-label="Переключить тему"
+            >
                 {{ themeIcon }}
             </button>
 

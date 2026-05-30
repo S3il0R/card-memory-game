@@ -80,6 +80,13 @@ body {
   z-index: 100;
   transition: transform 0.2s;
 }
+@media (max-width: 480px) {
+  #btn-theme, .btn-theme {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+  }
+}
 #btn-theme:hover, .btn-theme:hover {
   transform: scale(1.1);
 }
@@ -212,8 +219,14 @@ button {
   justify-content: center;
   gap: 55px;
   align-items: center;
+  justify-items: center;
   max-width: 680px;
   margin: 0 auto clamp(12px, 2vw, 20px);
+}
+@media (max-width: 480px) {
+  .hud {
+    gap: 25px;
+  }
 }
 
 .hud-stat {
@@ -237,6 +250,7 @@ button {
   gap: clamp(6px, 2vw, 10px);
   justify-content: center;
   align-content: center;
+  justify-items: center;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;

@@ -104,6 +104,12 @@ body {
     z-index: 100;
     transition: transform 0.2s;
 
+    @include respond-to(mobile) {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+    }
+
     &:hover { transform: scale(1.1); }
     &:active { transform: scale(0.96); }
 }
@@ -226,8 +232,13 @@ button { font-family: $font-main; }
     justify-content: center;
     gap: 55px;
     align-items: center;
+    justify-items: center;
     max-width: 680px;
     margin: 0 auto clamp(12px, 2vw, 20px);
+
+    @include respond-to(mobile) {
+        gap: 25px
+    }
 }
 
 .hud-stat {
@@ -251,6 +262,7 @@ button { font-family: $font-main; }
     gap: clamp(6px, 2vw, 10px);
     justify-content: center;
     align-content: center;
+    justify-items: center;
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
