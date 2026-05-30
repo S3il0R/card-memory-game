@@ -3,77 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Найди пару v2.0</title>
+    <title>Найди пару v3.0</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Переключатель темы -->
-    <button id="btn-theme" aria-label="Переключить тему">🌙</button>
-
-    <!-- Экран меню -->
-    <div id="screen-menu" class="screen active">
-        <h1>Найди пару</h1>
-
-        <div class="card-panel">
-
-            <div class="settings-group">
-                <label class="settings-label">Сложность</label>
-                <div class="options-row">
-                    <label class="radio-btn"><input type="radio" name="difficulty" value="easy"> Легко</label>
-                    <label class="radio-btn"><input type="radio" name="difficulty" value="normal" checked> Нормально</label>
-                    <label class="radio-btn"><input type="radio" name="difficulty" value="hard"> Сложно</label>
-                </div>
-            </div>
-
-            <div class="settings-group">
-                <label class="settings-label">Режим</label>
-                <div class="options-row">
-                    <label class="radio-btn"><input type="radio" name="mode" value="free" checked> Свободный</label>
-                    <label class="radio-btn"><input type="radio" name="mode" value="timed"> На время</label>
-                </div>
-            </div>
-
-            <div class="settings-group">
-                <label class="settings-label">Символы на карточках</label>
-                <div class="options-row">
-                    <label class="radio-btn"><input type="radio" name="symbol" value="letters" checked> 🔤 Буквы</label>
-                    <label class="radio-btn"><input type="radio" name="symbol" value="numbers"> 🔢 Цифры</label>
-                    <label class="radio-btn"><input type="radio" name="symbol" value="shapes"> ⏺️ Фигуры</label>
-                </div>
-            </div>
-
-            <button id="btn-start" class="btn-primary">Начать игру</button>
-        </div>
-    </div>
-
-    <!-- Экран игры -->
-    <div id="screen-game" class="screen">
-        <div class="hud">
-            <span id="hud-moves" class="hud-stat">Ходов: 0</span>
-            <button id="btn-menu" class="btn-secondary">Меню</button>
-            <span id="hud-timer" class="hud-stat">00:00</span>
-        </div>
-        <div id="game-board" class="board"></div>
-    </div>
-
-    <!-- Экран результата -->
-    <div id="screen-result" class="screen">
-        <div class="card-panel result-panel">
-            <h2 id="result-title"></h2>
-            <p id="result-stars" class="result-stars"></p>
-            <p id="result-time"></p>
-            <p id="result-moves"></p>
-            <div class="btn-row">
-                <button id="btn-play-again" class="btn-primary">Играть снова</button>
-                <button id="btn-to-menu" class="btn-secondary">В меню</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
