@@ -215,8 +215,8 @@ const ResultScreen = defineComponent({
         const stars = computed(() => {
             if (!props.result.won) return '💔';
             const pairs = DIFFICULTY[props.settings.difficulty].pairs;
-            if (props.result.moves <= pairs + 2)      return '⭐⭐⭐';
-            if (props.result.moves <= pairs * 2)       return '⭐⭐';
+            if (props.result.moves <= pairs * 2)      return '⭐⭐⭐';
+            if (props.result.moves <= pairs * 3)       return '⭐⭐';
             return '⭐';
         });
 
