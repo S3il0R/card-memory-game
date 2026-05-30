@@ -74,11 +74,11 @@ const AppMenu = defineComponent({
                 </div>
 
                 <div class="settings-group">
-                    <span class="settings-label">Символы</span>
+                    <span class="settings-label">Карточки</span>
                     <div class="options-row">
-                        <label class="radio-btn" :class="{ selected: symbolType === 'letters' }" @click="symbolType = 'letters'">🔤 Буквы</label>
-                        <label class="radio-btn" :class="{ selected: symbolType === 'numbers' }" @click="symbolType = 'numbers'">🔢 Цифры</label>
-                        <label class="radio-btn" :class="{ selected: symbolType === 'symbols'  }" @click="symbolType = 'symbols'">🔣 Символы</label>
+                        <label class="radio-btn" :class="{ selected: symbolType === 'letters' }" @click="symbolType = 'letters'">Буквы</label>
+                        <label class="radio-btn" :class="{ selected: symbolType === 'numbers' }" @click="symbolType = 'numbers'">Цифры</label>
+                        <label class="radio-btn" :class="{ selected: symbolType === 'symbols'  }" @click="symbolType = 'symbols'">Символы</label>
                     </div>
                 </div>
 
@@ -222,11 +222,11 @@ const ResultScreen = defineComponent({
 
         const timeText = computed(() => {
             if (props.settings.mode === 'free') {
-                return `⏱ Затрачено: ${formatTime(props.result.seconds)}`;
+                return `🕑 Затрачено: ${formatTime(props.result.seconds)}`;
             }
             return props.result.won
-                ? `⏱ Осталось: ${formatTime(props.result.seconds)}`
-                : '⏱ Время вышло!';
+                ? `🕑 Осталось: ${formatTime(props.result.seconds)}`
+                : '🕑 Время вышло!';
         });
 
         return { stars, timeText };
